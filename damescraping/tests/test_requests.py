@@ -22,7 +22,6 @@
 # Boston, MA 02110-1301 USA,
 
 from unittest import TestCase
-import newspaper
 
 import requests
 from lxml import html
@@ -59,8 +58,8 @@ class TestRequests(TestCase):
         self.assertTrue(title_elem.tag, "title")
         self.assertTrue(title_elem.getparent().tag, "head")
 
-    def test_xpath(self):
-        page = requests.get('http://www.davidam.com')
-        tree = html.fromstring(page.content)
-        boxes = tree.xpath('//div[@class="box-title"]/text()')
-        self.assertEqual(boxes, ['Contacto | Contact', 'Master Metodología de la Investigación en Ciencias Sociales / Master in Social Research', 'Manuales | Manuals', 'Tutoriales mundo lisp / Lisp world tutorials', 'Apuntes Tutoriales / Tutorials Notes', 'Artículos Tutoriales / Tutorials Articles '])
+    # def test_xpath(self):
+    #     page = requests.get('http://www.davidam.com')
+    #     tree = html.fromstring(page.content)
+    #     boxes = tree.xpath('//div[@class="box-title"]/text()')
+    #     self.assertEqual(boxes, ['Contacto | Contact', 'Master Metodología de la Investigación en Ciencias Sociales / Master in Social Research', 'Manuales | Manuals', 'Tutoriales mundo lisp / Lisp world tutorials', 'Apuntes Tutoriales / Tutorials Notes', 'Artículos Tutoriales / Tutorials Articles '])
