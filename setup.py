@@ -28,7 +28,7 @@ def readme():
         return f.read()
 
 setup(name='damescraping',
-      version='0.0.7',
+      version='0.0.8',
       description='Learning Scraping from Tests by David Arroyo Menéndez',
       long_description=readme(),
       classifiers=[
@@ -47,6 +47,7 @@ setup(name='damescraping',
       install_requires=[
           'markdown',
           'mechanicalsoup',
+          'newspaper3k',
           'lxml',
           'requests',
       ],
