@@ -28,7 +28,7 @@ def readme():
         return f.read()
 
 setup(name='damescraping',
-      version='0.0.8',
+      version='0.1.1.post1',
       description='Learning Scraping from Tests by David Arroyo Menéndez',
       long_description=readme(),
       classifiers=[
@@ -44,6 +44,7 @@ setup(name='damescraping',
       license='GPLv3',
       packages=['damescraping', 'damescraping.tests'],
       package_dir={'damescraping': 'damescraping', 'damescraping.tests': 'damescraping/tests'},
+      data_files=[('damescraping', ['damescraping/runtests.sh'])],
       install_requires=[
           'markdown',
           'mechanicalsoup',
