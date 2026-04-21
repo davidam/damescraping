@@ -1,23 +1,51 @@
-# damescraping
-https://python-packaging.readthedocs.io/en/latest/minimal.html
 
-To install from local:
-$ pip install -e .
+Learning about Scraping with python by David Arroyo Menéndez
+
+You can check external documentation in
++ https://requests.readthedocs.io/en/latest/
++ https://mechanicalsoup.readthedocs.io/en/stable/
++ https://newspaper.readthedocs.io/en/latest/
+
+* Installing from pypi
+
+First, to create a python virtual environment
+#+BEGIN_SRC
+$ mkdir ~/venv-damescraping
+$ python3.14 -m venv ~/venv-damescraping
+$ cd venv-damescraping
+$ source bin/activate
+#+END_SRC
+
+Second, to download the python package
+#+BEGIN_SRC
+$ python3.14 -m pip install damescraping
+#+END_SRC
+
+Last, to go the directory and to check files and directories
+#+BEGIN_SRC
+$ cd lib/python3.14/site-packages/damescraping
+$ ls
+#+END_SRC
+
+* Installing from git
+#+BEGIN_SRC
+$ git clone https://github.com/davidam/damescraping
+$ pip3 install markdown mechanicalsoup newspaper3k lxml requests
+$ cd damescraping
+#+END_SRC
+
+* Execute test
+#+BEGIN_SRC
+$ cd damescraping
+$ ./runtest.sh
+#+END_SRC
+
+* Making and uploading a pypi package
 
 To install create tar.gz in dist directory:
-$ python3 setup.py register sdist
 
-To upload to pypi:
+#+BEGIN_SRC
+$ cd damescraping
+$ python3 -m build
 $ twine upload dist/damescraping-0.1.tar.gz
-$ twine upload --repository-url https://test.pypi.org/legacy/ dist/*
-
-You can install from Internet in a python virtual environment to check:
-$ python3 -m venv /tmp/funny
-$ cd /tmp/funny
-$ source bin/activate
-$ pip3 install damescraping
-
-If you upload various tar.gz to pypi, you can need remove old files in dist directory and repeat the process:
-$ rm dist/*tar.gz
-$ python3 setup.py register sdist
-$ twine upload dist/damescraping-0.1.tar.gz
+#+END_SRC
